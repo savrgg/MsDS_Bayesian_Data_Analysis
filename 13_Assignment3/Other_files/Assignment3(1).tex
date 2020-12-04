@@ -1,0 +1,125 @@
+\documentclass[11pt]{report}
+\setlength{\parindent}{0cm}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{10.5in}
+\setlength{\topmargin}{-1in}
+\pagestyle{empty}
+
+\RequirePackage{amsthm,amsmath,comment,latexsym,amssymb}
+
+
+\begin{document}
+
+\def \bbeta{\mbox {\boldmath $\beta$}}
+\def \btheta{\mbox {\boldmath $\theta$}}
+\def \bmu{\mbox {\boldmath $\mu$}}
+\def \ttheta{{\theta}}
+\def \tmu{{\mu}}
+\def \tbu{{\bf U}}
+\def \tby{{\bf Y}}
+\def \tbz{{\bf Z}}
+\def \ta{{A}}
+\def \tb{{B}}
+\def \tn{{N}}
+\def \tr{{R}}
+\def \ts{{S}}
+\def \tt{{T}}
+\def \tu{{U}}
+\def \tx{{X}}
+\def \ty{{Y}}
+\def \tz{{Z}}
+\def \bb{\bf b}
+\def \bm{\bf m}
+\def \bn{\bf n}
+\def \by{\bf y}
+\def \bz{\bf z}
+\def \bX{\bf X}
+
+\begin{center}
+\vspace*{-.5cm}\textsc{University of Edinburgh}\\
+\textsc{School of Mathematics}\\
+\vspace{.25cm} \textbf{\large Bayesian Data Analysis}
+\end{center}
+
+\textbf{ Assignment 3}
+%\hfill \input{head-year}
+\vspace{.2cm}
+\hrule
+\vspace{0.2cm}
+
+\begin{center}
+{\bf Students' goals.}
+\end{center}
+
+\vspace{0.3cm}
+
+229 students aged 7-13 from 9 schools were asked whether popularity or sporting ability was most important to them. The aim is to create an appropriate model that takes into account variability between the schools (if necessary).
+
+{\bf Statistical analysis.}
+
+Introduce the following random variables. Consider the $i$th student, $i=1,2,\ldots, N = 229$, and set $Z_i = 1$ if popularity is more important to the student than sporting ability, and $Z_i=0$ otherwise.
+
+
+Possible likelihood:
+
+ $Z_i \mid \theta_k \sim Bern(\theta_k)$, where $k$ is the number of the school the $i$th student is from,
+ independently given $\theta_k$,  $\theta_k \in (0,1)$, $k=1,2,\ldots, 9$.
+
+\begin{enumerate}
+
+\item Run a Bayesian model for the case $\theta_1=\theta_2=\ldots, = \theta_9 = \theta$ (i.e. $Z_i \mid \theta \sim Bern(\theta)$ iid) with a non-informative prior for $\theta$ (e.g. Jeffreys $B(0.5,0.5)$ or uniform $B(1,1)$).
+
+\begin{enumerate}
+\item Check convergence and autocorrelation. State the number of burn-in iterations.  [1 mark]
+
+\item Give the posterior summaries for $\theta$. Record the value of the DIC.  [1 mark]
+
+
+\end{enumerate}
+
+\item Run a Bayesian model with independent non-informative priors for $\theta_k$, $k=1,\ldots,9$.
+
+\begin{enumerate}
+\item Check convergence and autocorrelation (if the autocorrelation is high, thin as necessary). State the number of burn-in iterations.
+ [1 mark]
+
+\item Give the posterior summaries for  $\theta_k$, $k=1,\ldots,9$. Record the value of the DIC.  [1 mark]
+
+
+\end{enumerate}
+
+\item Run a Bayesian model with a hierarchical exchangeable prior for $\theta_k$, $k=1,\ldots,9$:
+$$
+\theta_k \mid a,b \sim Beta(a,b), \quad k=1,\ldots,9,
+$$
+with a non-informative prior for $a>0$ and $b>0$.
+
+ Consider two types of priors:
+
+1) $a \sim \Gamma(0.01,0.01)$ and $b \sim \Gamma(0.01,0.01)$ independently;
+
+2) $a \sim |t_3|$ and $b \sim |t_3|$ independently, where $|t_3|$ the absolute value of Students' t distribution with 3 degrees of freedom with density $p(x) = \frac{4}{\sqrt{3}\pi} \frac 1 {(1+x^2/3)^2} $, $x>0$.
+
+
+\begin{enumerate}
+\item For each of the two types of priors for $a$ and $b$, check convergence and autocorrelation (if the autocorrelation is high, thin as necessary). State the number of burn-in iterations. Choose the prior such that the posterior distribution converges.
+ [3 marks]
+
+\item Give the posterior summaries for $a$, $b$ and $\theta_k$, $k=1,\ldots,9$. Record the value of the DIC.  [1 mark]
+
+
+\end{enumerate}
+
+
+\item  Compare the three models, with identical, independent and  the chosen hierarchical prior, by comparing their DIC. Which model is preferable? [2 marks]
+
+(Give any other comments on the comparison of the models.)
+
+\end{enumerate}
+
+Remark.  In questions 1(a), 2(a), 3(a), provide history and autocorrelation plots as evidence for your conclusions. WinBUGS code for all 3 models is on Learn.
+
+\end{document}
+
+

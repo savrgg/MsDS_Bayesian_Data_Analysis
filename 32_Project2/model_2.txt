@@ -1,0 +1,36 @@
+model
+{
+	for( i in 1 : p ) {
+		for( j in 1:n){
+			x[i,j] <- log(y[i,j])
+			x[i,j] ~ dnorm(mu[i], tau[i])
+			
+			# Posterior predictions
+			pred.pos[i,j] ~ dnorm(mu[i], tau[i])
+			
+			# Mixed predictions
+			pred.mix[i,j] ~ dnorm(mu[i], tau.pred[i])
+    	 }
+
+
+	mean.orig[i]<- (x[i,1]+x[i,2]+x[i,3]+x[i,4]+x[i,5]+x[i,6]+x[i,7]+x[i,8]+x[i,9])/9
+	s_2.orig[i]<-(pow(x[i,1]-mean.orig[i], 2)+pow(x[i,2]-mean.orig[i], 2)+pow(x[i,3]-mean.orig[i], 2)+pow(x[i,4]-mean.orig[i], 2)+pow(x[i,5]-mean.orig[i], 2)+pow(x[i,6]-mean.orig[i], 2)+pow(x[i,7]-mean.orig[i], 2)+pow(x[i,8]-mean.orig[i], 2)+pow(x[i,9]-mean.orig[i], 2))/9
+	
+	mean.pos[i] <- (pred.pos[i,1]+pred.pos[i,2]+pred.pos[i,3]+pred.pos[i,4]+pred.pos[i,5]+pred.pos[i,6]+pred.pos[i,7]+pred.pos[i,8]+pred.pos[i,9])/9
+	
+	s_2.pos[i] <- (pow(pred.pos[i,1]-mean.pos[i], 2)+pow(pred.pos[i,2]-mean.pos[i], 2)+pow(pred.pos[i,3]-mean.pos[i], 2)+pow(pred.pos[i,4]-mean.pos[i], 2)+pow(pred.pos[i,5]-mean.pos[i], 2)+pow(pred.pos[i,6]-mean.pos[i], 2)+pow(pred.pos[i,7]-mean.pos[i], 2)+pow(pred.pos[i,8]-mean.pos[i], 2)+pow(pred.pos[i,9]-mean.pos[i], 2))/9
+	
+	mean.mix[i] <- (pred.mix[i,1]+pred.mix[i,2]+pred.mix[i,3]+pred.mix[i,4]+pred.mix[i,5]+pred.mix[i,6]+pred.mix[i,7]+pred.mix[i,8]+pred.mix[i,9])/9
+	
+	s_2.mix[i] <- (pow(pred.mix[i,1]-mean.mix[i], 2)+pow(pred.mix[i,2]-mean.mix[i], 2)+pow(pred.mix[i,3]-mean.mix[i], 2)+pow(pred.mix[i,4]-mean.mix[i], 2)+pow(pred.mix[i,5]-mean.mix[i], 2)+pow(pred.mix[i,6]-mean.mix[i], 2)+pow(pred.mix[i,7]-mean.mix[i], 2)+pow(pred.mix[i,8]-mean.mix[i], 2)+pow(pred.mix[i,9]-mean.mix[i], 2))/9
+	
+	mu[i] ~ dnorm(0, .0001)
+	tau.pred[i] ~ dgamma(a, b) # for mixed predictions
+	tau[i] ~ dgamma(a, b)
+	sigma[i] <- 1/tau[i]
+	M.pos[i] <- step(s_2.pos[i]-s_2.orig[i])
+	M.mixed[i] <- step(s_2.mix[i]-s_2.orig[i])
+	}
+	a ~ dgamma(0.1, 0.1)
+	b ~ dgamma(0.1, 0.1)
+}

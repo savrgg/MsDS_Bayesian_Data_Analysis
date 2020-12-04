@@ -1,0 +1,150 @@
+\documentclass[12pt]{report}
+\setlength{\parindent}{0cm}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{10.5in}
+\setlength{\topmargin}{-1in}
+\pagestyle{empty}
+
+\RequirePackage{amsthm,amsmath,comment,latexsym,amssymb}
+
+
+\begin{document}
+
+\def \bbeta{\mbox {\boldmath $\beta$}}
+\def \btheta{\mbox {\boldmath $\theta$}}
+\def \bmu{\mbox {\boldmath $\mu$}}
+\def \ttheta{{\theta}}
+\def \tmu{{\mu}}
+\def \tbu{{\bf U}}
+\def \tby{{\bf Y}}
+\def \tbz{{\bf Z}}
+\def \ta{{A}}
+\def \tb{{B}}
+\def \tn{{N}}
+\def \tr{{R}}
+\def \ts{{S}}
+\def \tt{{T}}
+\def \tu{{U}}
+\def \tx{{X}}
+\def \ty{{Y}}
+\def \tz{{Z}}
+\def \bb{\bf b}
+\def \bm{\bf m}
+\def \bn{\bf n}
+\def \by{\bf y}
+\def \bz{\bf z}
+\def \bX{\bf X}
+
+\begin{center}
+\vspace*{-.5cm}\textsc{University of Edinburgh}\\
+\textsc{School of Mathematics}\\
+\vspace{.25cm} \textbf{\large Bayesian Data Analysis}
+\end{center}
+
+\textbf{ Exercise 1}
+%\hfill \input{head-year}
+\vspace{.35cm}
+\hrule
+\vspace{1cm}
+
+\begin{center}
+{\bf Gene expression data analysis.}
+\end{center}
+
+\vspace{1cm}
+
+Expression (concentration) of each of 50 genes was observed in the pancreas tissue of two groups of people: in a case group of 12 people who have pancreatic cancer, and in a control group of 10 people who do not have pancreatic cancer (the groups are approximately matched by age and gender). The study was performed in the same hospital.
+
+The question is to determine whether there is a difference between the gene expression in the pancreas tissue between the groups of people with and without the cancer.
+
+{\bf Statistical analysis.}
+
+Introduce the following random variables. Denote the logarithm of the gene expression of the $k$th gene for individual $i$ in the case group by $X_{ik}$, and for the $j$th individual in the control group by $Y_{jk}$, $k=1,2,\ldots, N = 50$, $i=1,\ldots, n=12$, $j=1,2,\ldots, m = 10$.
+
+Possible likelihood:
+\begin{eqnarray*}
+X_{ik} \mid \mu_1, \sigma_1 \sim N(\mu_1, \sigma_1^2), \,\,i=1,2,\ldots, n  \quad  independently\,\, (given \,\,   \mu_1, \sigma_1^2),\\
+Y_{jk} \mid \mu_2, \sigma_2 \sim N(\mu_2, \sigma_2^2), \,\, j=1,2,\ldots, m  \quad  independently\,\, (given  \,\,  \mu_2, \sigma_2^2).
+\end{eqnarray*}
+Also, $X_{ik}$ and $Y_{jk}$ are independent for all $i$, $j$, $k$. The observed data can be summarised as follows: $\bar{x} = 4.03$, $\bar{y} = 2.59$, $s_X = 0.29$ and $s_Y = 0.11$. 
+
+
+\begin{enumerate}
+\item Under the likelihood  above, state the distributions of
+\begin{gather*}
+\bar{X} = \frac{1}{nN}\sum_{i=1}^n \sum_{k=1}^N X_{ik}, \quad \bar{Y} = \frac{1}{mN}\sum_{j=1}^m \sum_{k=1}^N Y_{jk},\\
+s_X^2 = \frac{1}{nN}\sum_{i=1}^n \sum_{k=1}^N (X_{ik}-\bar{X})^2, \quad s_Y^2 = \frac{1}{mN}\sum_{j=1}^m \sum_{k=1}^N (Y_{jk}-\bar{Y})^2.
+\end{gather*}
+
+Discuss whether there is any loss of information by using only these data summaries  for this likelihood.
+
+\item Discuss the interpretation of $\mu_1$ and $\mu_2$, and of $\exp(\mu_1)$ and of $\exp(\mu_2)$. Propose a way to address the question of interest in terms of $\mu_1$ and $\mu_2$, whether there is a difference between the gene expression in the pancreas tissue between the groups of people with and without the cancer.
+
+\item Assume $\sigma_1$ and $\sigma_2$ are known, for now fix them to be $0.3$ and $0.1$, respectively. Propose two `non-informative' priors for $\mu_1$ (that belong to a conjugate family, possibly in the limit) (Priors 1 and 2).
+
+\item Now suppose that you have additional information from a study in several other hospitals that a similar Bayesian analysis of the log gene expression of the same 50 genes in control groups only produced the posterior distribution of $\mu_2$ to be $N(2.38,0.04^2)$, and use it as a prior. Discuss the implications.
+
+\item Posterior analysis.
+\begin{enumerate}
+\item For each of the 3 priors for $\mu_2$ (2 non-informative and 1 informative), determine the corresponding posterior distribution.
+\item For each prior for $\mu_2$, produce the posterior summaries: mean, median, standard deviation, and two-sided 90\% credible interval, and compare them.
+\item Check how each of the priors of $\mu_2$ affects the inference by producing prior / likelihood / posterior plots. Discuss if there is any conflict between the informative prior and the likelihood, and if there is, discuss possible reasons. Choose the prior that has the least effect on the corresponding posterior for further analysis.
+\item Use the same two non-informative priors for $\mu_1$ you proposed in Question 4, and address (a)-(c).
+\item For the priors for $\mu_1$ and  $\mu_2$ chosen in 5(c), compare the posterior distributions of $\mu_1$ and $\mu_2$. Use them to address the question of interest (give the final conclusion in terms of the original question). 
+\end{enumerate}
+
+\item Discuss which assumptions on the likelihood may be questioned.
+
+\end{enumerate}
+
+
+\end{document}
+
+
+\section{Description of the problem} %	Description of the problem, and questions for the statistical analysis (given question can be included).
+
+\section{Likelihood}  % explain why this likelihood is appropriate. State the assumptions made.
+
+\section{Prior distribution}	
+
+\subsection{Available prior information}
+
+%Describe prior information available.
+
+\subsection{Prior distribution(s)}
+
+
+% Specify the prior, explaining how a priori available information is used for that, and how you specified the prior where no a priori information is available.
+
+%If more than one choice of prior is reasonable given a priori information, perform model comparison and choose the most appropriate model(s). If more than one prior is chosen, compare the corresponding posterior inference. If the conclusions are different, analyse what kind of prior information is missing.
+
+\section{Posterior inference}	
+
+% for each choice of prior:
+
+\subsection{Posterior distribution}
+
+%	State posterior distribution explicitly if possible, for each choice of prior.
+
+
+
+\subsection{Posterior summaries and plots}
+
+%	Provide appropriate posterior summaries (follow the plan as in Assignment 2). Compare the results of the inference for different choices of prior
+
+\subsection{Posterior predictive summaries and plots}
+
+%	Provide appropriate posterior predictive summaries (follow the plan as in Assignment 2). Use them to comment whether the prior(s) is(are) appropriate.
+
+\subsection{Decisions}
+
+%Give your conclusions about the questions of interest for each prior. Comment whether they coincide or not, and what is the difference between the groups of priors where your conclusions are different.
+
+\section{Sensitivity of posterior inference with respect to the choice of prior}	
+
+% give prior/likelihood/posterior plots, with interpretation whether there a conflict between the prior and the likelihood
+
+%	Check sensitivity with respect to the prior distribution  against a wide range of priors (particularly where no specific prior information is available, or several priors are reasonable given available a priori information); justify your chosen range of priors (that they reflect available a priori information, and that the range is wide enough). Usually around 2-3 families of alternative priors; 2-3 alternative values of fixed parameters.
+
+\end{document}

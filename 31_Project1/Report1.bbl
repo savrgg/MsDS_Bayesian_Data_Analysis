@@ -1,0 +1,113 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Costa Mota~Para{\'\i}ba%
+, Bochkina%
+\BCBL {}\ \BBA {} Diniz%
+}{%
+Costa Mota~Para{\'\i}ba%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+costa2017bayesian}
+\APACinsertmetastar {%
+costa2017bayesian}%
+\begin{APACrefauthors}%
+Costa Mota~Para{\'\i}ba, C.%
+, Bochkina, N.%
+\BCBL {}\ \BBA {} Diniz, C\BPBI A\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Bayesian truncated beta nonlinear mixed-effects models}
+  {Bayesian truncated beta nonlinear mixed-effects models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Applied Statistics}{}{}{1--27}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cribari-Neto%
+\ \BBA {} Zeileis%
+}{%
+Cribari-Neto%
+\ \BBA {} Zeileis%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+cribari2009beta}
+\APACinsertmetastar {%
+cribari2009beta}%
+\begin{APACrefauthors}%
+Cribari-Neto, F.%
+\BCBT {}\ \BBA {} Zeileis, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Beta regression in R} {Beta regression in r}.{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Vehtari%
+, Gelman%
+\BCBL {}\ \BBA {} Gabry%
+}{%
+Vehtari%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+loo}
+\APACinsertmetastar {%
+loo}%
+\begin{APACrefauthors}%
+Vehtari, A.%
+, Gelman, A.%
+\BCBL {}\ \BBA {} Gabry, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016{\protect \BCnt {1}}}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {loo: Efficient leave-one-out cross-validation and WAIC
+  for Bayesian models} {loo: Efficient leave-one-out cross-validation and waic
+  for bayesian models}{\BBCQ}\ [\bibcomputersoftwaremanual].
+\newblock
+\begin{APACrefURL} \url{https://github.com/stan-dev/loo} \end{APACrefURL}
+\newblock
+\APACrefnote{R package version 1.0.0}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Vehtari%
+, Gelman%
+\BCBL {}\ \BBA {} Gabry%
+}{%
+Vehtari%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+vehtari2016practical}
+\APACinsertmetastar {%
+vehtari2016practical}%
+\begin{APACrefauthors}%
+Vehtari, A.%
+, Gelman, A.%
+\BCBL {}\ \BBA {} Gabry, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016{\protect \BCnt {2}}}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Practical Bayesian model evaluation using leave-one-out
+  cross-validation and WAIC} {Practical bayesian model evaluation using
+  leave-one-out cross-validation and waic}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistics and Computing}{}{}{1--20}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

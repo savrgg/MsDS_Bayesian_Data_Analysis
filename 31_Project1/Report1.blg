@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Report1.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ref.bib
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+Warning--No journal in cribari2009beta
+You've used 4 entries,
+            6951 wiz_defined-function locations,
+            1292 strings with 11395 characters,
+and the built_in function-call counts, 7582 in all, are:
+= -- 947
+> -- 72
+< -- 348
++ -- 350
+- -- 9
+* -- 492
+:= -- 1363
+add.period$ -- 16
+call.type$ -- 4
+change.case$ -- 84
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 194
+empty$ -- 302
+format.name$ -- 120
+if$ -- 1466
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 0
+newline$ -- 108
+num.names$ -- 32
+pop$ -- 150
+preamble$ -- 1
+purify$ -- 16
+quote$ -- 0
+skip$ -- 471
+stack$ -- 0
+substring$ -- 379
+swap$ -- 120
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 320
+warning$ -- 1
+while$ -- 43
+width$ -- 0
+write$ -- 140
+(There was 1 warning)

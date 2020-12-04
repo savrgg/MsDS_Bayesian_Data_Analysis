@@ -1,0 +1,20 @@
+model
+{
+    barx ~ dnorm(mu[1], tau.mean[1])
+    bary ~ dnorm(mu[2], tau.mean[2])
+    s2x ~ dgamma(n1, tau1.2)
+    s2y ~ dgamma(n2, tau2.2)
+    for (j in 1:2) {
+        mu[j] ~ dnorm(0.00000E+00, 1.00000E-06)
+        sigma[j] <- sqrt(1/tau[j])
+    }
+    tau[1] ~ dgamma(0.1234321, 0.01111)
+    tau[2] ~ dgamma(10, 0.1)
+    delta <- mu[1] - mu[2]
+    tau.mean[1] <- tau[1] * n * N
+    tau.mean[2] <- tau[2] * m * N
+    tau1.2 <- n * N * tau[1]/2
+    tau2.2 <- m * N * tau[2]/2
+    n1 <- (n * N - 1)/2
+    n2 <- (m * N - 1)/2
+}
